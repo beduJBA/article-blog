@@ -24,4 +24,28 @@ Route::middleware('auth')->group(function () {
 Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index'])
     ->name('articles.index');
 
+Route::get('/articles/create', [\App\Http\Controllers\ArticleController::class, 'create'])
+    ->middleware('auth')
+    ->name('articles.create');
+
+Route::post('/articles', [\App\Http\Controllers\ArticleController::class, 'store'])
+    ->middleware('auth')
+    ->name('articles.store');
+
+Route::get('/articles/{slug}/edit', [\App\Http\Controllers\ArticleController::class, 'edit'])
+    ->middleware('auth')
+    ->name('articles.edit');
+
+Route::put('/articles/{slug}', [\App\Http\Controllers\ArticleController::class, 'update'])
+    ->middleware('auth')
+    ->name('articles.update');
+
+Route::delete('/articles/{slug}', [\App\Http\Controllers\ArticleController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('articles.destroy');
+
+Route::get('/articles/{slug}', [\App\Http\Controllers\ArticleController::class, 'show'])
+    ->name('articles.show');
+
+
 require __DIR__.'/auth.php';

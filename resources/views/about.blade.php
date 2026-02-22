@@ -1,8 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('About Us') }}
-        </h2>
+        <div class="max-w-5xl mx-auto my-2 ml-3">
+            <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
+                {{ __('About Us') }}
+            </h2>
+        </div>
     </x-slot>
 
     <div class="py-12">
